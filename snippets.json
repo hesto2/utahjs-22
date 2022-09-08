@@ -1,0 +1,100 @@
+{
+  "Arrow function": {
+    "prefix": "arrow",
+    "body": "($1) => $2"
+  },
+  "classname": {
+    "prefix": "cln",
+    "body": "className={classes.$1}"
+  },
+  "test": {
+    "prefix": "test",
+    "body": ["test('$1', ()=>{", "\t$2", "})"]
+  },
+  "describe": {
+    "prefix": "describe",
+    "body": ["describe('$1', ()=>{", "\t$2", "})"]
+  },
+  "suite": {
+    "prefix": "suite",
+    "body": [
+      "import React from 'react';",
+      "import {shallow} from 'enzyme';",
+      "import { $1 } from './$1';",
+      "",
+      "const mockProps = {};",
+      "",
+      "beforeEach(() => {",
+      "\tjest.resetAllMocks();",
+      "});",
+      "describe('$1', () => {",
+      "\ttest('', () => {",
+      "\t\tconst wrapper = shallow(<$1 {...mockProps} />)",
+      "\t});",
+      "});"
+    ]
+  },
+  "Const Props": {
+    "prefix": "const props",
+    "body": "const { $1 } = this.props;"
+  },
+  "Const State": {
+    "prefix": "const state",
+    "body": "const { $1 } = this.state;"
+  },
+  "bind this": {
+    "prefix": "bind(this);",
+    "body": ".bind(this);"
+  },
+  "Const styles": {
+    "prefix": "const styles",
+    "body": [
+      "const styles = (theme: any) => {",
+      "\treturn createStyles({})",
+      "};"
+    ]
+  },
+  "Create Component": {
+    "prefix": "cmpnt",
+    "body": [
+      "import React from 'react';",
+      "import { createStyles, withStyles, WithStyles } from '@material-ui/styles';",
+      "",
+      "const styles = (theme: any) => createStyles({})",
+      "",
+      "interface Props extends WithStyles<typeof styles> {}",
+      "",
+      "export const $1 = ({}: Props) => {",
+      "\treturn <div />",
+      "};",
+      "",
+      "export default withStyles(styles)($1);"
+    ],
+    "description": "Creates a new react component"
+  },
+  "Constructor": {
+    "prefix": "constructor",
+    "body": ["constructor(props:Props){", "\tsuper(props);", "\t$1", "}"],
+    "description": "Creates a new react component"
+  },
+  "Method": {
+    "prefix": "method",
+    "body": ["$1($2){", "\t$3", "}"],
+    "description": "Creates a new react component"
+  },
+  "Print to console": {
+    "prefix": "slog",
+    "body": ["console.log(`$1`$2);"],
+    "description": "Log output to console"
+  },
+  "Import": {
+    "prefix": "import",
+    "body": ["import ${1} from '$2';${0}"],
+    "description": "Import statement"
+  },
+  "Then": {
+    "prefix": "thn",
+    "body": [".then(res=>{", "\t$1", "})", ".catch(err=>{$2})"],
+    "description": "Log output to console"
+  }
+}
